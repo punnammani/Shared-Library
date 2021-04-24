@@ -1,15 +1,5 @@
-//import org.apache.commons.csv.*
-//import java.util.stream.*
-//import org.apache.commons.csv.CSVRecord
-import com.opencsv.CSVRecord;
+import org.apache.commons.csv.*
 import java.util.stream.*
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 @NonCPS
 def call()
 {
@@ -20,10 +10,7 @@ String header="App ID,App Name,Release Version,Environments Passed,Environment F
 	println("$WORKSPACE")
 
 Reader filereader = new FileReader("C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Test\\Input.csv");
-Iterable<CSVRecord> records = CSVFormat.EXCEL
-		.withHeader(HEADERS)
-		.withFirstRecordAsHeader()
-		.parse(filereader); 
+Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(filereader); 
 
 StringBuilder sb = new StringBuilder();
 sb.append(header);
