@@ -10,7 +10,10 @@ String header="App ID,App Name,Release Version,Environments Passed,Environment F
 	println("$WORKSPACE")
 
 Reader filereader = new FileReader("C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Test\\Input.csv");
-Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(filereader); 
+Iterable<CSVRecord> records = CSVFormat.DEFAULT
+	                               .withHeader(HEADERS)
+		                        .withFirstRecordAsHeader()
+		                          .parse(filereader); 
 
 StringBuilder sb = new StringBuilder();
 sb.append(header);
