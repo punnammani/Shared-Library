@@ -1,6 +1,6 @@
 import org.apache.commons.csv.*
 import java.util.stream.*
-import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.csv.CSVRecord
 @NonCPS
 def call()
 {
