@@ -1,6 +1,6 @@
 def call(Map getval) {
 	checkout([$class: 'GitSCM', 
 	branches: [[ name: getval.branch ]], 
-	userRemoteConfigs: [[credentialsId: '78c8965c-0a19-4076-ac1e-43cca4780423', url: getval.url ]]
+	userRemoteConfigs: [[credentialsId: 'gitcred', url: getval.url ]]
 	])
   }
