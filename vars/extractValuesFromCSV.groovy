@@ -7,6 +7,7 @@ def call()
 String[] HEADERS = ["AppID","AppName","Environment","ReleaseVersion","Status"]
 String header="App ID,App Name,Release Version,Environments Passed,Environment Failed,Comments";
 
+	println("$WORKSPACE")
 
 Reader filereader = new FileReader("$WORKSPACE\\Input.csv");
 Iterable<CSVRecord> records = CSVFormat.DEFAULT
