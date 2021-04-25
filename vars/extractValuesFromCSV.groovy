@@ -1,6 +1,8 @@
 import org.apache.commons.csv.*
 import java.util.stream.*
 @NonCPS
+@Grab('org.apache.commons:commons-csv:1.2')
+import static org.apache.commons.csv.CSVRecord.*
 def call()
 {
 
