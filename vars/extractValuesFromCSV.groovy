@@ -10,7 +10,7 @@ String header="App ID,App Name,Release Version,Environments Passed,Environment F
 	println("$WORKSPACE")
 
 Reader filereader = new FileReader("C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Test\\Input.csv");
-Iterable<CSVReader> records = CSVFormat.DEFAULT
+Iterable<CSVRecord> records = CSVFormat.DEFAULT
 	                               .withHeader(HEADERS)
 		                        .withFirstRecordAsHeader()
 		                          .parse(filereader); 
@@ -18,7 +18,7 @@ Iterable<CSVReader> records = CSVFormat.DEFAULT
 StringBuilder sb = new StringBuilder();
 sb.append(header);
 
-Map<String, List<CSVReader>> recordFiltered =   StreamSupport
+Map<String, List<CSVRecord>> recordFiltered =   StreamSupport
 		.stream(records.spliterator(), false).
 		collect(Collectors.groupingBy({record -> record.get("AppID")+"-"+record.get("AppName")+"-"+record.get("ReleaseVersion")} ));
 		
@@ -31,14 +31,14 @@ println("-----------------------------------------")
 println("")
 println("")
 println("")
-for (Map.Entry<String, List<CSVReader>> entry : recordFiltered.entrySet()) {
+for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	//System.out.println(entry.getKey());
-	List<CSVReader> buildList = entry.getValue();
+	List<CSVRecord> buildList = entry.getValue();
 	
-	List<CSVReader> failedList = buildList.stream().filter({f -> f.get("Status").contains("Failed")})
+	List<CSVRecord> failedList = buildList.stream().filter({f -> f.get("Status").contains("Failed")})
 	.collect(Collectors.toList());
 	
-	List<CSVReader> passedList = buildList.stream().filter({f -> !f.get("Status").contains("Failed")})
+	List<CSVRecord> passedList = buildList.stream().filter({f -> !f.get("Status").contains("Failed")})
 	.collect(Collectors.toList());
 	
 	String delimitter = ",";
