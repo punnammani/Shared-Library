@@ -63,7 +63,7 @@ def BuildDet = new BuildDetails()
 String header = "App ID,App Name,Release Version,Environments Passed,Environment Failed,Comments";
 Pattern pattern = Pattern.compile(",");
 
-BufferedReader filecontent = new BufferedReader(new FileReader("D:\\Jenkins\\Jenkins\\workspace\\Pipeline-CSVReader\\Input.csv"));
+BufferedReader filecontent = new BufferedReader(new FileReader("$WORKSPACE\\Input.csv"));
 List<BuildDetails> buildStatus = filecontent.lines().skip(1).map({m ->
 				String[] x = pattern.split(m);
 				println "${x[0]}, ${x[1]}, ${x[2]}, ${x[3]}, ${x[4]}"
