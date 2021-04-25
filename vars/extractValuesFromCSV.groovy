@@ -17,6 +17,7 @@ Reader filereader = new FileReader("$WORKSPACE\\Input.csv");
 Iterable<CSVRecord> records = CSVFormat.DEFAULT
 		.withHeader(HEADERS)
 	        .withFirstRecordAsHeader()
+	        .withDelimiter('')
 		.parse(filereader);
 
 StringBuilder sb = new StringBuilder();
