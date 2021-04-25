@@ -1,7 +1,6 @@
 import org.apache.commons.csv.*
 import java.util.stream.*
-@NonCPS
-@Grab
+
 	
 def call()
 {
