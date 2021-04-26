@@ -12,5 +12,5 @@ Jenkins_Username :: Punnam Durga Manikanta
 Regards,
 Mani
 
-''', subject: '[Jenkins_Pipeline]::[CSV Read] #BuildNumber : $BUILD_NUMBER #Status : $BUILD_STATUS', to: 'punnamdurgamanikanta@gmail.com'
+''', subject: '[Jenkins_Pipeline]::[CSV Read] #BuildNumber : $BUILD_NUMBER #Status : $BUILD_STATUS', to: 'punnamdurgamanikanta@gmail.com,manikantapunnam@gmail.com'
 }
