@@ -6,8 +6,8 @@ import java.util.stream.*
 def call()
 {
 
-String[] HEADERS = ["AppID","AppName","Environment","ReleaseVersion","Status"]
-String header="App ID,App Name,Release Version,Environments Passed,Environment Failed,Comments";
+def HEADERS = ["AppID","AppName","Environment","ReleaseVersion","Status"]
+def header="App ID,App Name,Release Version,Environments Passed,Environment Failed,Comments"
 
 //Reader filereader = new FileReader("D:\\Demo-Pipeline\\CSV-Jenkins\\Input.csv");
 Reader filereader = new FileReader("$WORKSPACE\\Input.csv");
