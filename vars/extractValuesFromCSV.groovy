@@ -1,6 +1,7 @@
 @Grab(group='org.apache.commons', module='commons-csv', version='1.8')
 import org.apache.commons.csv.*
 import java.util.stream.*
+@NonCPS
 
 	
 def call()
