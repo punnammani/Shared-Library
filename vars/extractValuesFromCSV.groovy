@@ -69,7 +69,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
 PrintWriter writer;
 try {
-	//writer = new PrintWriter(new File("D:\\Demo-Pipeline\\CSV-Jenkins\\test.csv"))
+
 	writer = new PrintWriter(new File("$WORKSPACE\\Release_Status.csv"))
 	writer.write(sb.toString());
 	System.out.println("done!");
